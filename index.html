@@ -16,10 +16,10 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ashishpal.dev/" />
+    <meta property="og:url" content="https://ashu.devinit.in/" />
     <meta property="og:title" content="Ashish Pal - Full Stack Developer | Python | React | Docker Enthusiast" />
     <meta property="og:description" content="Computer Science student at NIET specializing in full-stack development, API design, and DevOps. Experienced in Python, React, Flask, Docker, and self-hosted solutions." />
-    <meta property="og:image" content="https://ashishpal.dev/og-image.jpg" />
+    <meta property="og:image" content="https://ashu.devinit.in/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
@@ -27,10 +27,10 @@
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://ashishpal.dev/" />
+    <meta property="twitter:url" content="https://ashu.devinit.in/" />
     <meta property="twitter:title" content="Ashish Pal - Full Stack Developer | Python | React | Docker Enthusiast" />
     <meta property="twitter:description" content="Computer Science student at NIET specializing in full-stack development, API design, and DevOps. Experienced in Python, React, Flask, Docker, and self-hosted solutions." />
-    <meta property="twitter:image" content="https://ashishpal.dev/og-image.jpg" />
+    <meta property="twitter:image" content="https://ashu.devinit.in/og-image.jpg" />
     <meta property="twitter:creator" content="@ashishpal" />
     
     <!-- Additional Meta Tags -->
@@ -39,7 +39,7 @@
     <meta name="msapplication-config" content="/browserconfig.xml" />
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://ashishpal.dev/" />
+    <link rel="canonical" href="https://ashu.devinit.in/" />
     
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -52,12 +52,69 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    
     <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="//github.com" />
     <link rel="dns-prefetch" href="//linkedin.com" />
+    <link rel="dns-prefetch" href="//google-analytics.com" />
+    <link rel="dns-prefetch" href="//googletagmanager.com" />
+    <link rel="dns-prefetch" href="//vercel.com" />
+    <link rel="dns-prefetch" href="//hotjar.com" />
     
     <!-- Performance optimizations -->
     <link rel="prefetch" href="/profile-photo.jpg" />
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID', {
+        page_title: 'Ashish Pal Portfolio',
+        page_location: 'https://ashu.devinit.in'
+      });
+    </script>
+    
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+    </script>
+    
+    <!-- Performance and Core Web Vitals Monitoring -->
+    <script>
+      // Performance monitoring
+      if ('performance' in window && 'PerformanceObserver' in window) {
+        // Monitor CLS (Cumulative Layout Shift)
+        new PerformanceObserver((entryList) => {
+          for (const entry of entryList.getEntries()) {
+            if (!entry.hadRecentInput) {
+              console.log('CLS detected:', entry.value);
+            }
+          }
+        }).observe({entryTypes: ['layout-shift']});
+        
+        // Monitor LCP (Largest Contentful Paint)
+        new PerformanceObserver((entryList) => {
+          const entries = entryList.getEntries();
+          const lastEntry = entries[entries.length - 1];
+          console.log('LCP:', lastEntry.startTime);
+        }).observe({entryTypes: ['largest-contentful-paint']});
+        
+        // Monitor FID (First Input Delay)
+        new PerformanceObserver((entryList) => {
+          for (const entry of entryList.getEntries()) {
+            console.log('FID:', entry.processingStart - entry.startTime);
+          }
+        }).observe({entryTypes: ['first-input']});
+      }
+    </script>
     
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -67,7 +124,7 @@
       "name": "Ashish Pal",
       "jobTitle": "Full Stack Developer",
       "description": "Computer Science student at NIET specializing in full-stack development, API design, and DevOps",
-      "url": "https://ashishpal.dev",
+      "url": "https://ashu.devinit.in",
       "email": "palbro86@gmail.com",
       "telephone": "+91-7428450179",
       "address": {

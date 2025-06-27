@@ -71,6 +71,7 @@ export default function Contact() {
             rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
             download={method.download || undefined}
             className="contact-card"
+
           >
             <div className="contact-card-header">
               <div className="contact-icon">

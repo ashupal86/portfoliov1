@@ -1,27 +1,52 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { profileData, projectsData } from '../data/portfolioData';
 
 export default function Hero() {
+  // Get featured projects for the hero section
+  const featuredProjects = projectsData.filter(project => project.featured).slice(0, 2);
+  
   return (
     <section className="hero" role="banner" aria-label="Introduction">
       <div className="hero-content">
         <div className="hero-text">
-          <h1 itemProp="name">Ashish Pal</h1>
+          <div className="hero-profile mobile-only">
+            <div className="hero-photo-container">
+              <img 
+                src="/profile-photo.jpg" 
+                alt="Ashish Pal - Full Stack Developer" 
+                className="hero-profile-image"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'flex';
+                }}
+              />
+              <div className="hero-photo-placeholder">
+                <div className="placeholder-icon">👨‍💻</div>
+                <p>Add your photo here</p>
+                <span>profile-photo.jpg in public folder</span>
+              </div>
+            </div>
+          </div>
+          
+          <h1 itemProp="name">{profileData.name}</h1>
           
           <p className="hero-subtitle">
-            Hey, I'm <strong>Ashish Pal</strong>. I love building software, mixing stacks and creating innovative solutions.
+            Hey, I'm <strong>{profileData.name}</strong>. I love building software, mixing stacks and creating innovative solutions.
           </p>
           
           <p className="hero-description">
-            Computer Science Student at NIET & Full Stack Developer | Docker Enthusiast | UI/UX Designer
+            {profileData.bio}
           </p>
           
           <p className="hero-description">
-            Currently pursuing B.Tech in Computer Science Engineering • Passionate about web development, API design, and self-hosted solutions
+            Currently pursuing {profileData.education.degree} • Passionate about web development, API design, and self-hosted solutions
+            • {profileData.stats.publicRepos} public repositories on GitHub
           </p>
           
           <div className="hero-links">
             <a 
-              href="https://github.com/ashupal86" 
+              href={profileData.github} 
               target="_blank" 
               rel="noopener noreferrer"
             >
@@ -29,18 +54,18 @@ export default function Hero() {
             </a>
             <span className="separator">·</span>
             <a 
-              href="https://linkedin.com/in/ashish-pal-5725a6257" 
+              href={profileData.linkedin} 
               target="_blank" 
               rel="noopener noreferrer"
             >
               LinkedIn
             </a>
             <span className="separator">·</span>
-            <a href="mailto:palbro86@gmail.com">
+            <a href={`mailto:${profileData.email}`}>
               Email
             </a>
             <span className="separator">·</span>
-            <span className="location">Greater Noida, UP</span>
+            <span className="location">{profileData.location}</span>
           </div>
 
           <div className="hero-actions">
@@ -52,27 +77,27 @@ export default function Hero() {
             >
               📄 Download Resume
             </a>
-            <a 
-              href="/contact" 
+            <Link 
+              to="/contact" 
               className="btn btn-secondary"
             >
               💬 Get in Touch
-            </a>
+            </Link>
           </div>
         </div>
 
-        <div className="hero-photo">
-          <div className="photo-container">
+        <div className="hero-photo desktop-only">
+          <div className="hero-photo-container">
             <img 
               src="/profile-photo.jpg" 
               alt="Ashish Pal - Full Stack Developer" 
-              className="profile-image"
+              className="hero-profile-image"
               onError={(e) => {
                 e.target.style.display = 'none';
                 e.target.nextSibling.style.display = 'flex';
               }}
             />
-            <div className="photo-placeholder">
+            <div className="hero-photo-placeholder">
               <div className="placeholder-icon">👨‍💻</div>
               <p>Add your photo here</p>
               <span>profile-photo.jpg in public folder</span>
@@ -83,24 +108,20 @@ export default function Hero() {
 
       <div className="featured-projects">
         <h2>Featured Projects</h2>
-        <div className="project-item">
-          <h3 className="project-title">Notes API</h3>
-          <p className="project-description">A RESTful API for CRUD operations with structured JSON responses and robust error handling.</p>
-          <div className="project-tags">
-            <span className="tag">Flask</span>
-            <span className="tag">Python</span>
-            <span className="tag backend">SQLite</span>
+        {featuredProjects.map((project, index) => (
+          <div key={project.id} className="project-item">
+            <h3 className="project-title">{project.title}</h3>
+            <p className="project-description">{project.description}</p>
+            <div className="project-tags">
+              {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                <span key={techIndex} className={`tag ${project.category}`}>
+                  {tech}
+                </span>
+              ))}
+              {project.status === 'live' && <span className="tag">Live</span>}
+            </div>
           </div>
-        </div>
-        <div className="project-item">
-          <h3 className="project-title">Self-Hosted Homelab</h3>
-          <p className="project-description">Personal server setup using Proxmox, Docker, and Jellyfin for media streaming and VM orchestration.</p>
-          <div className="project-tags">
-            <span className="tag devops">Docker</span>
-            <span className="tag devops">Proxmox</span>
-            <span className="tag backend">Linux</span>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

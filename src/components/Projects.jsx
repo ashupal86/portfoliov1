@@ -1,60 +1,8 @@
 import React from "react";
+import { projectsData } from '../data/portfolioData';
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "Notes API",
-      description: "A comprehensive RESTful API for note management with CRUD operations, structured JSON responses, and robust error handling. Built with Flask and SQLite.",
-      features: [
-        "Complete CRUD operations for notes",
-        "Structured JSON responses",
-        "Error handling and validation",
-        "SQLite database integration"
-      ],
-      technologies: ["Flask", "Python", "SQLite", "REST API"],
-      github: "https://github.com/ashupal86",
-      category: "backend"
-    },
-    {
-      title: "My Manager (Clear Ledger)",
-      description: "A financial management system with an intuitive interface for tracking expenses, managing budgets, and generating financial reports.",
-      features: [
-        "Expense tracking and categorization",
-        "Budget management tools",
-        "Financial report generation",
-        "User-friendly dashboard"
-      ],
-      technologies: ["React", "JavaScript", "HTML/CSS", "Local Storage"],
-      github: "https://github.com/ashupal86",
-      category: "frontend"
-    },
-    {
-      title: "Blog Website",
-      description: "A dynamic blog platform featuring user authentication, post management, and responsive design. Perfect for content creators and bloggers.",
-      features: [
-        "User authentication system",
-        "Create, edit, and delete posts",
-        "Responsive design",
-        "Comment system"
-      ],
-      technologies: ["Flask", "Python", "HTML/CSS", "SQLite"],
-      github: "https://github.com/ashupal86",
-      category: "fullstack"
-    },
-    {
-      title: "Self-Hosted Homelab",
-      description: "Personal server infrastructure using Proxmox for virtualization, Docker for containerization, and Jellyfin for media streaming.",
-      features: [
-        "Proxmox virtualization setup",
-        "Docker container orchestration",
-        "Jellyfin media server",
-        "Remote access and management"
-      ],
-      technologies: ["Proxmox", "Docker", "Linux", "Jellyfin"],
-      github: "https://github.com/ashupal86",
-      category: "devops"
-    }
-  ];
+  const projects = projectsData;
 
   return (
     <section className="section">
@@ -62,11 +10,12 @@ export default function Projects() {
       
       <p className="hero-description">
         Here are some of the projects I've built to solve real-world problems and explore new technologies.
+        All projects are from my GitHub repositories with real data.
       </p>
 
-      <div className="grid grid-2">
+      <div className="projects-grid">
         {projects.map((project, index) => (
-          <div key={index} className="card">
+          <div key={project.id} className="project-card">
             <h3>{project.title}</h3>
             <p>{project.description}</p>
             
@@ -92,6 +41,42 @@ export default function Projects() {
                 ))}
               </div>
             </div>
+            
+            <div style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#666' }}>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                {project.stars > 0 && <span>⭐ {project.stars} stars</span>}
+                {project.forks > 0 && <span>🍴 {project.forks} forks</span>}
+                <span>📅 Updated {new Date(project.lastUpdated).toLocaleDateString()}</span>
+                <span className={`tag ${project.status === 'live' ? 'backend' : 'devops'}`}>
+                  {project.status}
+                </span>
+              </div>
+            </div>
+            
+            <div style={{ marginTop: '1.5rem' }}>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <a 
+                  href={project.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                  style={{ fontSize: '0.85rem', padding: '0.5rem 1rem' }}
+                >
+                  GitHub
+                </a>
+                {project.demo && (
+                  <a 
+                    href={project.demo} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                    style={{ fontSize: '0.85rem', padding: '0.5rem 1rem' }}
+                  >
+                    Live Demo
+                  </a>
+                )}
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -100,6 +85,7 @@ export default function Projects() {
         <h2>Want to see more?</h2>
         <p>
           Check out my GitHub profile for more projects and contributions to open source.
+          I have {projects.length} featured projects showcasing different aspects of full-stack development.
         </p>
         <div className="cta-buttons">
           <a 

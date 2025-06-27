@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -8,11 +8,15 @@ import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 
+
 export default function App() {
+  const location = useLocation();
+  const isProjectsPage = location.pathname === '/projects';
+  
   return (
     <div>
       <Navbar />
-      <main className="container">
+      <main className={isProjectsPage ? "container projects-container" : "container"}>
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/about" element={<About />} />
@@ -27,6 +31,7 @@ export default function App() {
           <p>© Ashish Pal 2025</p>
         </div>
       </footer>
+
     </div>
   );
 }
