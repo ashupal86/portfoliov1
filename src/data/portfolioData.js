@@ -4,8 +4,8 @@
 export const profileData = {
   name: "Ashish Pal",
   username: "ashupal86",
-  title: "Python & Android Developer | Flask Enthusiast | Learning DevOps",
-  bio: "💻 Python & Android Developer | 🌐 Flask Enthusiast | 📦 Learning DevOps 🚀 Passionate about building APIs, dynamic web apps. 3rd Year Student. NIET",
+  title: "Aspiring Developer | 3+ Years Self-Learning | Python & Flask Enthusiast",
+  bio: "💻 Self-taught Developer with 3+ years of learning journey | 🌐 Flask Enthusiast | 📦 Exploring DevOps 🚀 Passionate about building APIs, web apps, and continuous learning. 3rd Year CS Student at NIET",
   location: "Greater Noida, Uttar Pradesh, India",
   website: "https://ashu.devinit.in",
   github: "https://github.com/ashupal86",
@@ -14,6 +14,7 @@ export const profileData = {
   phone: "+91-7428450179",
   
   stats: {
+    
     followers: 14,
     following: 26,
     publicRepos: 42,
@@ -199,13 +200,13 @@ export const skillsData = {
   
   frameworks: [
     { name: "Flask", level: 90, category: "backend", primary: true },
-    { name: "React", level: 85, category: "frontend", primary: true },
-    { name: "Vite", level: 80, category: "build-tool", primary: false },
+    { name: "React", level: 65, category: "frontend", primary: true },
+    { name: "Vite", level: 70, category: "build-tool", primary: false },
     { name: "Bootstrap", level: 85, category: "frontend", primary: false }
   ],
   
   tools: [
-    { name: "Docker", level: 75, category: "devops", primary: true },
+    { name: "Docker", level: 55, category: "devops", primary: true },
     { name: "Git", level: 90, category: "version-control", primary: true },
     { name: "Linux", level: 80, category: "os", primary: true },
     { name: "VS Code", level: 95, category: "editor", primary: false },
@@ -237,12 +238,12 @@ export const experienceData = [
     duration: "2024",
     period: "3 months",
     status: "completed",
-    description: "Worked on Python-based projects, developing clean and efficient code solutions. Gained hands-on experience with professional development practices and collaborative workflows.",
+    description: "First professional experience working on Python-based projects. Gained valuable exposure to development practices and collaborative workflows while contributing to real-world projects.",
     achievements: [
-      "Developed Python applications following best practices",
-      "Collaborated with team members on project requirements",
-      "Implemented error handling and code optimization",
-      "Participated in code reviews and learning sessions"
+      "Applied self-taught Python skills to real-world projects",
+      "Learned professional development practices and workflows",
+      "Gained experience with code reviews and team collaboration",
+      "Enhanced problem-solving abilities through mentorship"
     ],
     technologies: ["Python", "Flask", "Git", "REST APIs"],
     skills: ["Backend Development", "API Design", "Code Review", "Team Collaboration"]
