@@ -1,0 +1,29 @@
+{
+  "name": "Ashish Pal - Full Stack Developer Portfolio",
+  "short_name": "Ashish Pal",
+  "description": "Computer Science student at NIET specializing in full-stack development, API design, and DevOps",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0066cc",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"],
+  "lang": "en-US"
+} 

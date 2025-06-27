@@ -35,6 +35,15 @@ export default function Contact() {
       action: "View Profile"
     },
     {
+      title: "Resume",
+      value: "Download PDF",
+      description: "Download my complete resume with detailed experience and skills",
+      icon: "📄",
+      href: "/resume.pdf",
+      action: "Download",
+      download: "Ashish_Pal_Resume.pdf"
+    },
+    {
       title: "Location",
       value: "Greater Noida, UP",
       description: "Currently based in Greater Noida, Uttar Pradesh, India",
@@ -60,6 +69,7 @@ export default function Contact() {
             href={method.href}
             target={method.href.startsWith('http') ? '_blank' : undefined}
             rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            download={method.download || undefined}
             className="contact-card"
           >
             <div className="contact-card-header">
@@ -90,12 +100,11 @@ export default function Contact() {
             📧 Send Email
           </a>
           <a 
-            href="https://linkedin.com/in/ashish-pal-5725a6257" 
-            target="_blank" 
-            rel="noopener noreferrer"
+            href="/resume.pdf" 
+            download="Ashish_Pal_Resume.pdf"
             className="btn btn-secondary"
           >
-            💼 Connect on LinkedIn
+            📄 Download Resume
           </a>
         </div>
       </div>

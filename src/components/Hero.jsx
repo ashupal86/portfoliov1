@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" role="banner" aria-label="Introduction">
       <div className="hero-content">
         <div className="hero-text">
-          <h1>Ashish Pal</h1>
+          <h1 itemProp="name">Ashish Pal</h1>
           
           <p className="hero-subtitle">
             Hey, I'm <strong>Ashish Pal</strong>. I love building software, mixing stacks and creating innovative solutions.
@@ -41,6 +41,23 @@ export default function Hero() {
             </a>
             <span className="separator">·</span>
             <span className="location">Greater Noida, UP</span>
+          </div>
+
+          <div className="hero-actions">
+            <a 
+              href="/resume.pdf" 
+              download="Ashish_Pal_Resume.pdf"
+              className="btn btn-primary"
+              aria-label="Download Ashish Pal's Resume"
+            >
+              📄 Download Resume
+            </a>
+            <a 
+              href="/contact" 
+              className="btn btn-secondary"
+            >
+              💬 Get in Touch
+            </a>
           </div>
         </div>
 

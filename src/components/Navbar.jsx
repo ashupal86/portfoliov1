@@ -14,13 +14,13 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" role="navigation" aria-label="Main navigation">
       <div className="nav-container">
-        <Link to="/" className="logo">
+        <Link to="/" className="logo" aria-label="Home - Ashish Pal Portfolio">
           Ashish Pal
         </Link>
         
-        <ul className="nav-links">
+        <ul className="nav-links" role="menubar">
           {navItems.map((item) => (
             <li key={item.path}>
               <Link
