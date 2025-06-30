@@ -1,0 +1,133 @@
+/* Hero Section Specific Styles */
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4rem;
+  align-items: start;
+  margin-bottom: 4rem;
+}
+
+/* Desktop Photo Styles */
+.hero-photo.desktop-only {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 250px;
+}
+
+.hero-photo.desktop-only .hero-photo-container {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #e5e5e5;
+  background: #f8f9fa;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-photo.desktop-only .hero-photo-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.hero-photo.desktop-only .hero-profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobile Photo Styles */
+.hero-profile.mobile-only {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.hero-profile.mobile-only .hero-photo-container {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #e5e5e5;
+  background: #f8f9fa;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Placeholder Styles */
+.hero-photo-placeholder {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.hero-photo-placeholder .placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-photo-placeholder p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.hero-photo-placeholder span {
+  font-size: 0.7rem;
+  color: #888;
+  line-height: 1.2;
+}
+
+/* Responsive Design */
+@media (min-width: 769px) {
+  .desktop-only {
+    display: block !important;
+  }
+  
+  .mobile-only {
+    display: none !important;
+  }
+  
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: flex !important;
+  }
+  
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .hero-profile.mobile-only {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-profile.mobile-only .hero-photo-container {
+    width: 150px;
+    height: 150px;
+  }
+}

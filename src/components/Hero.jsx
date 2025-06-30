@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { profileData, projectsData } from '../data/portfolioData';
+import './Hero.css';
 
 export default function Hero() {
   // Get featured projects for the hero section
@@ -13,7 +14,7 @@ export default function Hero() {
           <div className="hero-profile mobile-only">
             <div className="hero-photo-container">
               <img 
-                src="/profile-photo.jpg" 
+                src="/profile-photo.jpeg" 
                 alt="Ashish Pal - Full Stack Developer" 
                 className="hero-profile-image"
                 onError={(e) => {
@@ -24,7 +25,7 @@ export default function Hero() {
               <div className="hero-photo-placeholder">
                 <div className="placeholder-icon">👨‍💻</div>
                 <p>Add your photo here</p>
-                <span>profile-photo.jpg in public folder</span>
+                <span>profile-photo.jpeg in public folder</span>
               </div>
             </div>
           </div>
@@ -89,7 +90,7 @@ export default function Hero() {
         <div className="hero-photo desktop-only">
           <div className="hero-photo-container">
             <img 
-              src="/profile-photo.jpg" 
+              src="/profile-photo.jpeg" 
               alt="Ashish Pal - Full Stack Developer" 
               className="hero-profile-image"
               onError={(e) => {
@@ -100,7 +101,7 @@ export default function Hero() {
             <div className="hero-photo-placeholder">
               <div className="placeholder-icon">👨‍💻</div>
               <p>Add your photo here</p>
-              <span>profile-photo.jpg in public folder</span>
+              <span>profile-photo.jpeg in public folder</span>
             </div>
           </div>
         </div>

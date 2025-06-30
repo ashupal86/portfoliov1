@@ -8,6 +8,8 @@ import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 
+import { Analytics } from "@vercel/analytics/react"
+
 
 export default function App() {
   const location = useLocation();
@@ -31,7 +33,7 @@ export default function App() {
           <p>© Ashish Pal 2025</p>
         </div>
       </footer>
-
+      <Analytics />
     </div>
   );
 }
