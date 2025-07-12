@@ -39,9 +39,8 @@ export default function Contact() {
       value: "Download PDF",
       description: "Download my complete resume with detailed experience and skills",
       icon: "📄",
-      href: "/resume.pdf",
-      action: "Download",
-      download: "Ashish_Pal_Resume.pdf"
+      href: "https://docs.google.com/document/d/1KuVv5h7r2wk0rPpHwkI9uRR0k2iwEkOd62S5MvmUPhE/edit?usp=sharing",
+      action: "Download"
     },
     {
       title: "Location",
@@ -101,7 +100,7 @@ export default function Contact() {
             📧 Send Email
           </a>
           <a 
-            href="/resume.pdf" 
+            href="https://docs.google.com/document/d/1KuVv5h7r2wk0rPpHwkI9uRR0k2iwEkOd62S5MvmUPhE/edit?usp=sharing" 
             download="Ashish_Pal_Resume.pdf"
             className="btn btn-secondary"
           >

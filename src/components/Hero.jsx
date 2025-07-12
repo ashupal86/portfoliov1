@@ -71,7 +71,7 @@ export default function Hero() {
 
           <div className="hero-actions">
             <a 
-              href="/resume.pdf" 
+              href="https://docs.google.com/document/d/1KuVv5h7r2wk0rPpHwkI9uRR0k2iwEkOd62S5MvmUPhE/edit?usp=sharing" 
               download="Ashish_Pal_Resume.pdf"
               className="btn btn-primary"
               aria-label="Download Ashish Pal's Resume"
